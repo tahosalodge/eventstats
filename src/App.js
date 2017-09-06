@@ -6,7 +6,7 @@ import Event from './components/event';
 class App extends Component {
   state = {eventData: []}
   componentDidMount() {
-    fetch('https://tahosalodge.dev/wp-json/tahosa-events/v1/tickets')
+    fetch('https://tahosalodge.org/wp-json/tahosa-events/v1/tickets')
     .then(res => res.json())
     .then(eventData => this.setState({eventData}))
   }
