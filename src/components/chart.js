@@ -1,5 +1,6 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
+import styled from 'styled-components';
 
 const colors = [
 	'#3F7CAC',
@@ -11,6 +12,17 @@ const colors = [
 	'#0A369D',
 ];
 
+const ChartWrapper = styled.div`
+	width: 50%;
+	padding: 2em;
+	box-sizing: border-box;
+	flex-grow: 1;
+
+	@media (max-width: 800px) {
+		width: 100%;
+	}
+`;
+
 const chart = ({eventData}) => {
   const data = {
   	labels: eventData.map(data => data.label),
@@ -20,9 +32,9 @@ const chart = ({eventData}) => {
   	}]
   };
   return (
-    <div style={{width: '50%'}}>
+    <ChartWrapper>
       <Doughnut data={data}/>
-    </div>
+    </ChartWrapper>
   )
 }
 export default chart;

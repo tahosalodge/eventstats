@@ -9,7 +9,7 @@ const Header = styled.div`
 `;
 
 const ChartWrapper = styled.div`
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-flow: row wrap;
 `;
