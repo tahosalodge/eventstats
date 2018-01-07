@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Home';
+import Banquet from './Banquet';
 import Login from './Login';
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/banquet" component={Banquet} />
           <Route path="/login" render={() => <Login setToken={this.setToken} />} />
         </Switch>
       </BrowserRouter>

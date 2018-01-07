@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
 
@@ -15,12 +16,12 @@ const ChartWrapper = styled.div`
   }
 `;
 
-const chart = ({ eventData }) => {
+const Chart = ({ eventData }) => {
   const data = {
-    labels: eventData.map(eData => eData.label),
+    labels: Object.keys(eventData),
     datasets: [
       {
-        data: eventData.map(eData => eData.value),
+        data: Object.keys(eventData).map(key => eventData[key]),
         backgroundColor: colors,
       },
     ],
@@ -31,4 +32,8 @@ const chart = ({ eventData }) => {
     </ChartWrapper>
   );
 };
-export default chart;
+
+Chart.propTypes = {
+  eventData: propTypes.shape().isRequired,
+};
+export default Chart;
