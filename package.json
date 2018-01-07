@@ -2,7 +2,6 @@
   "name": "tahosa-event-stats",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tahosalodge.github.io/eventstats/",
   "dependencies": {
     "chart.js": "^2.6.0",
     "gh-pages": "^1.0.0",
